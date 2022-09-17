@@ -1,0 +1,7 @@
+<header>
+  {%- assign menu = site.links | where: "display", "menu" -%}
+  {%- assign everywhere = site.links | where: "display", "everywhere" -%}
+  {%- assign links = menu | concat: everywhere | sort: "order" -%}
+  {%- assign icon_size = "1" -%}
+  {% include navigation.html %}
+</header>

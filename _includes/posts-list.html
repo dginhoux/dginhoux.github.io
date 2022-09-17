@@ -1,0 +1,50 @@
+{%- assign next_class = "disabled" -%}
+{%- if paginator.next_page -%}{%- assign next_class = "" -%}{% endif %}
+{%- assign prev_class = "disabled" -%}
+{%- if paginator.previous_page -%}{%- assign prev_class = "" -%}{% endif %}
+
+<ul class="nav flex-column">
+  <main class="all-posts">
+    {% for post in paginator.posts %}
+    <li class="nav-item">
+      <a class="text-decoration-none" href="{{ post.url | relative_url }}">
+        <div class="d-flex flex-row">
+          <div class="post-icon">
+            {%- assign category = post.category -%}
+            {%- include category-icon.html -%}
+          </div>
+
+          <div class="post-title p-2">
+            <div class="h3">
+              {{ post.title | escape }}
+            </div>
+            <div class="text-secondary small">
+              {{ post.date | date: site.date_format }} • {{ post.category }}
+            </div>
+          </div>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </main>
+</ul>
+
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a href="{{ paginator.next_page_path | relative_url }}" class="nav-link {{ next_class }}"
+       title="Articles précédents">
+      &laquo;&nbsp;Précédents
+    </a>
+  </li>
+  <li class="nav-item">
+    <a href="{{ '/search.html' | relative_url }}" class="nav-link" title="Recherche">
+      <span class="fa fa-search" aria-hidden="true" title="Recherche"></span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="nav-link {{ prev_class }}"
+       title="Articles suivants">
+      Suivants&nbsp;&raquo;
+    </a>
+  </li>
+</ul>
