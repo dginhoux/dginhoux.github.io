@@ -1,25 +1,25 @@
 # Jekyll configuration - https://jekyllrb.com/docs/configuration/
 
 # Site settings
-url: https://www.marcwrobel.fr
-title: Marc Wrobel
-short_title: MW
-description: Site personnel de Marc Wrobel.
+url: https://dginhoux.github.io/
+title: Dany GINHOUX
+short_title: DG
+description: Site personnel de Dany GINHOUX.
 logo: /assets/icon-192.png # Pour jekyll-seo-tag
 lang: fr
 
 author:
-  name: Marc Wrobel
-  email: marc.wrobel@gmail.com
-  uri: https://www.marcwrobel.fr
+  name: Dany GINHOUX
+  email: dginhoux@gmail.com
+  uri: https://dginhoux.github.io/
 
 # Pour jekyll-seo-tag
 social:
-  name: Marc Wrobel
+  name: Dany GINHOUX
   links:
-    - https://github.com/marcwrobel
-    - https://www.linkedin.com/in/marcwrobelfr
-    - https://stackoverflow.com/cv/marcwrobel
+    - https://github.com/dginhoux
+    # - https://www.linkedin.com/in/marcwrobelfr
+    # - https://stackoverflow.com/cv/marcwrobel
 
 category_icons:
   - title: liens
@@ -45,30 +45,30 @@ links:
     order: 5
     icon: search
   - title: Github
-    url: https://github.com/marcwrobel
+    url: https://github.com/dginhoux
     display: home
     order: 10
     icon: github
-  - title: LinkedIn
-    url: https://www.linkedin.com/in/marcwrobelfr
-    display: home
-    order: 20
-    icon: linkedin
-  - title: Stack Overflow
-    url: https://stackoverflow.com/cv/marcwrobel
-    display: home
-    order: 30
-    icon: stack-overflow
-  - title: Email
-    url: mailto:marc.wrobel@gmail.com
-    display: everywhere
-    order: 40
-    icon: at
-  - title: RSS
-    url: /feed.xml
-    display: everywhere
-    order: 50
-    icon: rss
+  # - title: LinkedIn
+  #   url: https://www.linkedin.com/in/marcwrobelfr
+  #   display: home
+  #   order: 20
+  #   icon: linkedin
+  # - title: Stack Overflow
+  #   url: https://stackoverflow.com/cv/marcwrobel
+  #   display: home
+  #   order: 30
+  #   icon: stack-overflow
+  # - title: Email
+  #   url: mailto:dginhoux@gmail.com
+  #   display: everywhere
+  #   order: 40
+  #   icon: at
+  # - title: RSS
+  #   url: /feed.xml
+  #   display: everywhere
+  #   order: 50
+  #   icon: rss
 
 # Build settings
 encoding: utf-8
@@ -76,7 +76,7 @@ timezone: Europe/Paris
 date_format: '%d/%m/%Y'
 permalink: /:title
 
-paginate: 5
+paginate: 30
 paginate_path: ':num'
 future: true
 
