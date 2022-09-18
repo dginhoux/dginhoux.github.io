@@ -1,5 +1,12 @@
-# See https://pages.github.com/versions/
+source "https://rubygems.org"
+gem 'jekyll'
+gem 'jekyll-paginate'
+gem 'jekyll-sitemap'
+gem 'jekyll-relative-links'
+gem "tzinfo-data", "~> 1.2021"
 
-source 'https://rubygems.org'
+# windows specific
+gem 'wdm', '>= 0.1.0'
 
-gem 'github-pages', group: :jekyll_plugins
+# update ruby version
+gem 'webrick'

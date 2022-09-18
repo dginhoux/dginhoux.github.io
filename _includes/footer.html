@@ -1,6 +1,20 @@
+	<script src="assets/js/ephesus.js"></script>
+	<script type="text/javascript">
+		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			document.getElementById('mode-switcher').classList.add('active');
+		}
+	</script>
 
-<footer class="container mt-auto py-3 text-center">
-  Licence <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>
-  &middot;
-  <a href="{{ '/' | absolute_url }}">dginhoux.github.io</a>
-</footer>
+	{% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{site.google_analytics}}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{site.google_analytics}}');
+    </script>
+	{% endif %}
+</body>
+</html>

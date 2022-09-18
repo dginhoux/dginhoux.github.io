@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+{%- include header.html -%}
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-sm-12 col-lg-10 py-3 mx-auto">
+      <article>
+        {%- if page.title -%}
+        <header>
+          <h1>{{ page.title | escape }}</h1>
+        </header>
+        {%- endif -%}
+        <div class="text-justify">
+          {{ content }}
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+{%- include footer.html -%}

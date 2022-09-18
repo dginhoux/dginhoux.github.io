@@ -1,115 +1,83 @@
-# Jekyll configuration - https://jekyllrb.com/docs/configuration/
-
 # Site settings
-url: https://dginhoux.github.io/
-title: Dany GINHOUX
-short_title: DG
-description: Site personnel de Dany GINHOUX.
-logo: /assets/icon-192.png # Pour jekyll-seo-tag
-lang: fr
+site: Ephesus
+title: Ephesus - Minimalist Jekyll Theme
+keywords: ephesus, blog
+description: >-
+  Ephesus - Minimalist Jekyll Theme
+lang: en-US
+timezone:  Europe/Istanbul
+repo: https://github.com/onepase/Ephesus # site repo [optional]
+google_verify:      XXX # Put your Google Verification here
+google_analytics:   UA-XXXXXXXX-00 # Put your Google Analytics code
+discus-identifier:  XXX
 
+# Author settings
 author:
-  name: Dany GINHOUX
-  email: dginhoux@gmail.com
-  uri: https://dginhoux.github.io/
+  name: Hakan Torun
+  bio: Computer Engineer @pardinus <br> Founder @zaqa <br> Open Source /#linux
+  picture: assets/images/profile.jpg 
+  github: onepase # github username
+  twitter: onepase # twitter username
+  facebook: onepase # facebook username
+  instagram: onepase # instagram username
+  youtube: https://www.youtube.com/channel/UCMmAto-wxBootXN91AzBiDg # youtube username
+  linkedin: hakantorun # linkedin username
+  email: your-email@email.com # email adress
 
-# Pour jekyll-seo-tag
-social:
-  name: Dany GINHOUX
-  links:
-    - https://github.com/dginhoux
-    # - https://www.linkedin.com/in/marcwrobelfr
-    # - https://stackoverflow.com/cv/marcwrobel
 
-category_icons:
-  - title: liens
-    icon: link
-  - title: notes
-    icon: pencil
-  - title: développement
-    icon: code
-  - title: administration
-    icon: server
-  - title: tools
-    icon: wrench
+# URL settings
+url: "http://127.0.0.1:4000" # Domain Name of host. [username].github.io for github pages
+permalink: pretty
 
-links:
-  - title: Accueil
-    url: /
-    display: menu
-    order: 0
-    icon: home
-  - title: Recherche
-    url: /search.html
-    display: everywhere
-    order: 5
-    icon: search
-  - title: Github
-    url: https://github.com/dginhoux
-    display: home
-    order: 10
-    icon: github
-  # - title: LinkedIn
-  #   url: https://www.linkedin.com/in/marcwrobelfr
-  #   display: home
-  #   order: 20
-  #   icon: linkedin
-  # - title: Stack Overflow
-  #   url: https://stackoverflow.com/cv/marcwrobel
-  #   display: home
-  #   order: 30
-  #   icon: stack-overflow
-  # - title: Email
-  #   url: mailto:dginhoux@gmail.com
-  #   display: everywhere
-  #   order: 40
-  #   icon: at
-  # - title: RSS
-  #   url: /feed.xml
-  #   display: everywhere
-  #   order: 50
-  #   icon: rss
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
-# Build settings
-encoding: utf-8
-timezone: Europe/Paris
-date_format: '%d/%m/%Y'
-permalink: /:title
-
-paginate: 30
-paginate_path: ':num'
-future: true
-
-dependencies:
-  css:
-    - name: 'bootstrap.min.css'
-      href: 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css'
-      integrity: 'sha256-T/zFmO5s/0aSwc6ics2KLxlfbewyRz6UNw1s3Ppf5gE='
-    - name: 'font-awesome.min.css'
-      href: 'https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css'
-      integrity: 'sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0='
-  scripts:
-    - name: 'simple-jekyll-search.min.js'
-      src: 'https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1/dest/simple-jekyll-search.min.js'
-      integrity: 'sha256-ieUctArvXa2Jaww7u+OyjqzBpOW04E9K17BzP8qrxVM='
-
-sass:
-  style: compressed
-
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-
-include:
-  - .htaccess
-  - .well-known
 
 exclude:
-  - .idea
-  - .jekyll-cache/
-  - .sass-cache/
+  - .jekyll-cache
+  - .obsidian
   - Gemfile
   - Gemfile.lock
-  - LICENSE
+  - LICENSE.md
   - README.md
+  - CONTRIBUTING.md
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-relative-links
+paginate: 20
+paginate_path: "/page/:num"
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:slug
+  
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+relative_links:
+  enabled:     true
+  collections: false
